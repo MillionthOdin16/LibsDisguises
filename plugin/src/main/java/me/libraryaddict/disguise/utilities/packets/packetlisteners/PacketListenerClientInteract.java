@@ -43,8 +43,8 @@ public class PacketListenerClientInteract extends PacketAdapter {
 
         Player observer = event.getPlayer();
 
-        // If the player is temporary
-        if (observer == null || event.isPlayerTemporary() || observer.getName().contains("UNKNOWN[")) {
+        if (observer == null || event.isPlayerTemporary() || observer.getName().contains("UNKNOWN[")) // If the player is temporary
+        {
             return;
         }
 
@@ -65,7 +65,7 @@ public class PacketListenerClientInteract extends PacketAdapter {
             event.setCancelled(true);
         }
 
-        if (!Bukkit.isPrimaryThread()) {
+        if (event.isAsync()) {
             new BukkitRunnable() {
                 @Override
                 public void run() {
