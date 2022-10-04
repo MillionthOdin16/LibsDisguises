@@ -95,7 +95,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-/plugin/target/
+plugin/target/
 /target/
 /shared/target/
 /nms/v1_19_R1/target/
